@@ -210,11 +210,11 @@
 .another {
   right: 10px;
   left: auto;
-  background-color: #e25454;
+  background-color: #2196F3;
 }
 
 .another:hover {
-  box-shadow: 0px 0px 10px 10px #ff6c6c24;
+  box-shadow: 0px 0px 10px 10px #2195f31c;
 }
 
 @keyframes rotationOn {
