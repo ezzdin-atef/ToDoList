@@ -179,10 +179,18 @@
   color: #fff;
   text-decoration: none;
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   transition: box-shadow 0.3s ease-in-out;
   &:hover {
     box-shadow: 0px 0px 10px 10px #00000024;
+  }
+}
+.another {
+  right: 10px;
+  left: auto;
+  background-color: rgb(226, 84, 84);
+  &:hover {
+    box-shadow: 0px 0px 10px 10px #ff6c6c24;
   }
 }
 @keyframes rotationOn {
@@ -235,5 +243,11 @@
   .alert {
     width: 98%;
     margin: 1%;
+  }
+  .links, .another {
+    display: block;
+    position: static;
+    margin: 20px 10px;
+    padding: 20px;
   }
 }

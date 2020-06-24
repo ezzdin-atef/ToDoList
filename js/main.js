@@ -7,17 +7,17 @@ const elements = {
   todoList: document.querySelector('.todo-list'),
 };
 
-let todo = [];
-let done = [];
+let todo = new Array();
+let done = new Array();
 
 const checkNoToDo = () => {
   if (todo.length === 0) { // check if there is To Do
     myMessage = `
-      <li class="no-tasks">
-        There is no Tasks
-      </li>
-    `;
-    elements.todoList.innerHTML = myMessage;
+    <li class="no-tasks">
+      There is no Tasks
+    </li>
+  `;
+  elements.todoList.innerHTML = myMessage;
   } else {
     if (elements.todoList.contains(document.querySelector('.todo-list .no-tasks'))) { // remove the no tasks element if exists
       elements.todoList.innerHTML = '';
@@ -40,6 +40,8 @@ window.onload = () => {
   // load the data from locale storage
   todo = JSON.parse(localStorage.getItem('todo'));
   done = JSON.parse(localStorage.getItem('done'));
+  if (todo == null) todo = new Array();
+  if (done == null) done = new Array();
 
   checkNoToDo();
   console.log(done);

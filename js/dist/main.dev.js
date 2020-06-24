@@ -8,13 +8,13 @@ var elements = {
   todoDone: document.querySelector('.todo-done'),
   todoList: document.querySelector('.todo-list')
 };
-var todo = [];
-var done = [];
+var todo = new Array();
+var done = new Array();
 
 var checkNoToDo = function checkNoToDo() {
   if (todo.length === 0) {
     // check if there is To Do
-    myMessage = "\n      <li class=\"no-tasks\">\n        There is no Tasks\n      </li>\n    ";
+    myMessage = "\n    <li class=\"no-tasks\">\n      There is no Tasks\n    </li>\n  ";
     elements.todoList.innerHTML = myMessage;
   } else {
     if (elements.todoList.contains(document.querySelector('.todo-list .no-tasks'))) {
@@ -39,6 +39,8 @@ window.onload = function () {
 
   todo = JSON.parse(localStorage.getItem('todo'));
   done = JSON.parse(localStorage.getItem('done'));
+  if (todo == null) todo = new Array();
+  if (done == null) done = new Array();
   checkNoToDo();
   console.log(done);
   todo.forEach(function (val) {
